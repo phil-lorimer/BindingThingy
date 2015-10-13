@@ -8,6 +8,7 @@ public class MobEnemy extends Enemy {
 		this.damage = setdamage(diff);
 	}
 	
+	@Override
 	private int setHealth(int d){
 		int h = 0;
 		switch (d){
@@ -24,6 +25,7 @@ public class MobEnemy extends Enemy {
 		return h;
 	}
 	
+	@Override
 	private int setdamage(int d){
 		int dmg = 0;
 		switch (d){
@@ -40,10 +42,12 @@ public class MobEnemy extends Enemy {
 		return dmg;
 	}
 	
+	@Override
 	public int getHealth(){
 		return this.health;
 	}
 	
+	@Override
 	public int getdamage(){
 		return this.damage;
 	}
