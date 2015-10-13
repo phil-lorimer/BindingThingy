@@ -10,7 +10,13 @@ public class Floor {
 	public Floor(String size) {
 		boolean hasStart = false;
 		boolean[][] floorPlan = null;
-		if(size.equals("medium")){
+		if (size.equals("small")) {
+			map = new Room[3][3];
+			floorPlan = new boolean[3][3];
+			dimension = 3;
+			floorPlan = generate();
+		}
+		else if(size.equals("medium")){
 			map = new Room[5][5];
 			floorPlan = new boolean[5][5];
 			dimension = 5;
