@@ -1,3 +1,6 @@
+import java.awt.event.KeyEvent;
+import java.util.HashMap;
+
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 
@@ -57,7 +60,7 @@ public final class GameRunner/* extends JFrame */{
 
 	private void init () {
 
-		setTitle("BindingThingy v.0.0.1");
+		/*setTitle("BindingThingy v.0.0.1");
 		setSize(90, 60);
 		setLocationRelativeTo(null);
 		final Container container = this.getContentPane();
@@ -76,7 +79,8 @@ public final class GameRunner/* extends JFrame */{
 				}
 			});
 			sizeButton.setMnemonic(mapSizes.get(mapSize));
+			*/
 		}
 	}
 
-}
+

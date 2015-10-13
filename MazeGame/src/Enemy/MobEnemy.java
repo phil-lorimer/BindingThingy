@@ -1,15 +1,18 @@
 package Enemy;
 
 public class MobEnemy extends Enemy {
+	private int health;
+	private int damage;
+	private int diff;
 	
 	public MobEnemy(int difficulty){
 		this.diff = difficulty;
-		this.health = setHealth(diff);
-		this.damage = setdamage(diff);
+		setHealth(diff);
+		setdamage(diff);
 	}
 	
-	@Override
-	private int setHealth(int d){
+
+	public void setHealth(int d){
 		int h = 0;
 		switch (d){
 		case 1:
@@ -22,11 +25,11 @@ public class MobEnemy extends Enemy {
 			h = 6;
 			break;
 		}
-		return h;
+		this.health = h;
 	}
 	
-	@Override
-	private int setdamage(int d){
+	
+	private void setdamage(int d){
 		int dmg = 0;
 		switch (d){
 		case 1:
@@ -39,7 +42,7 @@ public class MobEnemy extends Enemy {
 			dmg = 3;
 			break;
 		}
-		return dmg;
+		this.damage = dmg;
 	}
 	
 	@Override
@@ -47,7 +50,6 @@ public class MobEnemy extends Enemy {
 		return this.health;
 	}
 	
-	@Override
 	public int getdamage(){
 		return this.damage;
 	}

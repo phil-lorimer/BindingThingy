@@ -5,11 +5,8 @@ public abstract class Enemy {
 	private int damage;
 	private int diff;
 
-	public Enemy(int e_health, int e_dmg, int e_diff) {
-		// TODO Auto-generated constructor stub
-		this.health = e_health;
-		this.damage = e_dmg;
-		this.diff = e_diff;
+	public Enemy() {
+
 	}
 
 	public void setHealth(int n_Health) {

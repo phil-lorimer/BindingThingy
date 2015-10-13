@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
+import Objects.*;
 
 public class Player {
 	private int totalHealth;
