@@ -57,7 +57,7 @@ public final class GameRunner/* extends JFrame */{
 			}
 			System.out.println();
 	}
-
+	
 	private void init () {
 
 		/*setTitle("BindingThingy v.0.0.1");
