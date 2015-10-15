@@ -11,7 +11,7 @@ import Room.StartRoom;
 public final class GameRunner/* extends JFrame */{
 
 	private static final HashMap<String, Integer> mapSizes; 
-
+	public static Player p1;
 	static {
 		mapSizes = new HashMap<String, Integer>();
 		mapSizes.put("Small", KeyEvent.VK_S);
@@ -35,7 +35,7 @@ public final class GameRunner/* extends JFrame */{
 
 		String floorSize = JOptionPane.showInputDialog("Pick a floor size: 'small,' 'medium,' or 'large'");
 		Floor current = new Floor(floorSize);
-		Player p1 = new Player();
+		p1 = new Player(current);
 		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
 			for (int i = 0; i<current.getDimensions(); i++){
 				System.out.print("|");
@@ -58,6 +58,10 @@ public final class GameRunner/* extends JFrame */{
 			System.out.println();
 	}
 	
+	public static Player getPlayer(){
+		return p1;
+	}
+
 	private void init () {
 
 		/*setTitle("BindingThingy v.0.0.1");
