@@ -45,6 +45,10 @@ public class MobEnemy extends Enemy {
 		this.damage = dmg;
 	}
 	
+	public void updateHealth(int u_Health) {
+		this.health += u_Health;//much better than continuously setting enemy health
+	}
+	
 	@Override
 	public int getHealth(){
 		return this.health;
