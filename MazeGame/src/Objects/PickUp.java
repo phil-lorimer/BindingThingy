@@ -1,6 +1,6 @@
 package Objects;
 
-import GameRunner;
+import Runner.GameRunner;
 
 public class PickUp extends Item {
 	private final int MIN_TYPE = 0;

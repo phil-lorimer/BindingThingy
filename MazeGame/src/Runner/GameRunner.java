@@ -1,3 +1,5 @@
+package Runner;
+
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 
@@ -6,6 +8,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
+
+import static javax.swing.BoxLayout.Y_AXIS;
+
+import java.awt.EventQueue;
+import java.awt.Container;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import Room.BossRoom;
 import Room.Room;
@@ -53,19 +64,21 @@ public final class GameRunner extends JFrame {
 		setLocationRelativeTo(null);
 
 		final Container container = this.getContentPane();
-		container.setLayout(new BoxLayout(container, BoxLayout, Y_AXIS));
+		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS)); //BoxLayout, Y_AXIS));
 
 		final JPanel floorSizePanel = new JPanel();
-		JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'")
+		JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'");
 		container.add(floorSizePanel);
 
+		String floorSize = "Small"; //default to "Small" for now
+
 		final JPanel buttonPanel = new JPanel();
-		for(final String mapSize : mapSizes) {
+		for(final String mapSize : mapSizes) { //this creates a compiler error; best way to loop through?
 			final JButton sizeButton = new JButton(mapSize);
 			sizeButton.addActionListener(new  ActionListener() {
 				@Override
 				public void actionPerformed(final ActionEvent e) {
-					floorSize = mapSize;
+					floorSize = mapSize; //error??
 				}
 			} );
 			sizeButton.setMnemonic(mapSizes.get(mapSize));
@@ -73,7 +86,10 @@ public final class GameRunner extends JFrame {
 		}
 			container.add(buttonPanel);
 
+			
+
 			Floor current = new Floor(floorSize);
+		
 		p1 = new Player(current);
 		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
 			for (int i = 0; i<current.getDimensions(); i++){
