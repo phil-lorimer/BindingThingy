@@ -22,7 +22,7 @@ import Room.BossRoom;
 import Room.Room;
 import Room.StartRoom;
 
-public final class GameRunner/* extends JFrame */{
+public final class GameRunner extends JFrame {
 
 	private static final HashMap<String, Integer> mapSizes; 
 	public static Player p1;
@@ -39,17 +39,18 @@ public final class GameRunner/* extends JFrame */{
 
 	public static void main(String[] args) {
 
-		/*EventQueue.invokeLater(new Runnable() {
+		EventQueue.invokeLater(new Runnable() {
 	
 			@Override
 			public void run() {
 				final GameRunner game = new GameRunner();
 				game.setVisible(true);
 			}
-		} );*/
+		} );
 
-		String floorSize = JOptionPane.showInputDialog("Pick a floor size: 'small,' 'medium,' or 'large'");
-		Floor current = new Floor(floorSize);
+		//String floorSize = JOptionPane.showInputDialog("Pick a floor size: 'small,' 'medium,' or 'large'");
+
+		/*Floor current = new Floor(floorSize);
 		
 		p1 = new Player(current);
 		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
@@ -71,7 +72,8 @@ public final class GameRunner/* extends JFrame */{
 				}
 				System.out.println();
 			}
-			System.out.println();//remove 52-74
+			System.out.println();*/
+			//remove 53-75
 	}
 	
 	public static Player getPlayer() {
@@ -80,7 +82,7 @@ public final class GameRunner/* extends JFrame */{
 
 	private void init () {
 		//JFrame game = new JFrame();
-		/*
+
 		setTitle("BindingThingy v.0.0.1");
 		setSize(90, 60);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -111,7 +113,7 @@ public final class GameRunner/* extends JFrame */{
 
 			
 
-			Floor current = new Floor(floorSize);
+			Floor current = new Floor(floorSize);//how do wait for user to pick a size button?
 		
 		p1 = new Player(current);
 		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
@@ -134,7 +136,6 @@ public final class GameRunner/* extends JFrame */{
 				System.out.println();
 			}
 			System.out.println();
-			*/
 	}
 }
 
