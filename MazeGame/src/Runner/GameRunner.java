@@ -49,31 +49,7 @@ public final class GameRunner extends JFrame {
 		} );
 
 		//String floorSize = JOptionPane.showInputDialog("Pick a floor size: 'small,' 'medium,' or 'large'");
-
-		/*Floor current = new Floor(floorSize);
-		
-		p1 = new Player(current);
-		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
-			for (int i = 0; i<current.getDimensions(); i++){
-				System.out.print("|");
-				for (int j = 0; j< current.getDimensions(); j++){
-					if (current.map[i][j] instanceof StartRoom){
-						System.out.print("  S  |");
-					}
-					else if (current.map[i][j] instanceof BossRoom){
-						System.out.print("  B  |");
-					}
-					else if(current.map[i][j] instanceof Room){
-						System.out.print("  *  |");
-					}
-					else{
-						System.out.print("  O  |");
-					}
-				}
-				System.out.println();
-			}
-			System.out.println();*/
-			//remove 53-75
+		//createGame(floorSize);
 	}
 	
 	public static Player getPlayer() {
@@ -92,7 +68,7 @@ public final class GameRunner extends JFrame {
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS)); //BoxLayout, Y_AXIS));
 
 		final JPanel floorSizePanel = new JPanel();
-		JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'");
+		floorSizePanel.add(final JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'"););
 		container.add(floorSizePanel);
 
 		String floorSize = "Small"; //default to "Small" for now
@@ -110,10 +86,11 @@ public final class GameRunner extends JFrame {
 			buttonPanel.add(sizeButton);
 		}
 			container.add(buttonPanel);
+			createGame(floorSize);			
+	}
 
-			
-
-			Floor current = new Floor(floorSize);//how do wait for user to pick a size button?
+	private void createGame(String floorSize) {
+		Floor current = new Floor(floorSize);//how do wait for user to pick a size button?
 		
 		p1 = new Player(current);
 		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
