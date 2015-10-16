@@ -2,7 +2,10 @@ import java.awt.event.KeyEvent;
 import java.util.HashMap;
 
 import javax.swing.JOptionPane;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import Room.BossRoom;
 import Room.Room;
@@ -63,16 +66,19 @@ public final class GameRunner/* extends JFrame */{
 	}
 
 	private void init () {
-
-		/*setTitle("BindingThingy v.0.0.1");
+		/*
+		//JFrame game = new JFrame();
+		setTitle("BindingThingy v.0.0.1");
 		setSize(90, 60);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
+
 		final Container container = this.getContentPane();
 		container.setLayout(new BoxLayout(container, BoxLayout, Y_AXIS));
 
 		final JPanel floorSizePanel = new JPanel();
+		JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'")
 		container.add(floorSizePanel);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		for(final String mapSize : mapSizes) {
 			final JButton sizeButton = new JButton(mapSize);
