@@ -13,7 +13,7 @@ public class PickUp extends Item {
 		switch(type){
 			case 0: 
 				int numCoins = MIN_COINS + (int)(Math.random()*MAX_COINS); 
-				GameRunner.p1.updateMoney(numCoins);
+				GameRunner.player.updateMoney(numCoins);
 				break;
 			case 1: 
 				GameRunner.getPlayer().heal(1);

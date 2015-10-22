@@ -23,7 +23,7 @@ public final class GameRunner extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private static final HashMap<String, Integer> mapSizes; 
-	private Player player;
+	/*private*/public static Player player;
 	private String floorSize;
 
 	static {
@@ -68,7 +68,8 @@ public final class GameRunner extends JFrame {
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS)); //BoxLayout, Y_AXIS));
 
 		final JPanel floorSizePanel = new JPanel();
-		floorSizePanel.add(final JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'"););
+		final JLabel instr = new JLabel("Pick a floor size: 'small,' 'medium,' or 'large'");
+		floorSizePanel.add(instr);
 		container.add(floorSizePanel);
 
 		final JPanel buttonPanel = new JPanel();
@@ -86,11 +87,15 @@ public final class GameRunner extends JFrame {
 			container.add(buttonPanel);			
 	}
 
+	protected void setFloorSize(String mapSize) {
+		this.floorSize = mapSize;		
+	}
+
 	private void createGame(String floorSize) {
 		Floor current = new Floor(floorSize);
 		
 		player = new Player(current);
-		System.out.println("Name: " + p1.getName() + " Health: " + p1.getCurrentHealth() + "/" + p1.getTotalHealth() + " Money: " + p1.getMoney());
+		System.out.println("Name: " + player.getName() + " Health: " + player.getCurrentHealth() + "/" + player.getTotalHealth() + " Money: " + player.getMoney());
 			for (int i = 0; i<current.getDimensions(); i++){
 				System.out.print("|");
 				for (int j = 0; j< current.getDimensions(); j++){
