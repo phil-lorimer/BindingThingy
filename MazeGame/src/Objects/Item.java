@@ -1,7 +1,7 @@
 package Objects;
 
 
-public class Item {
+public abstract class Item {
 
 	public Item() {
 		// TODO Auto-generated constructor stub
