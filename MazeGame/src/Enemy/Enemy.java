@@ -18,7 +18,7 @@ public abstract class Enemy {
 	}
 
 	public void updateHealth(int u_Health) {
-		this.health += u_Health;//much better than continuously setting enemy health
+		this.health += u_Health;
 	}
 
 	public void setDamage(int n_dmg) {
